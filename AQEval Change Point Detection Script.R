@@ -39,4 +39,5 @@ for (i in seq(1,length(aqeval_output),1)){
   aqeval_stats <- rbind(aqeval_stats,as.data.frame(aqeval_output[[i]][1]))
 }
 
-
+saveRDS(aqeval_stats, "aqeval_bps.rds")
+saveRDS(aqeval_output, "aqeval_output.rds")
