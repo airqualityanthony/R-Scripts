@@ -12,8 +12,8 @@ AQEvalMultipleSite <- function(site, years){
   
   data_daily <- timeAverage(data,avg.time = "day")
   
-  
-  bps <- AQEval::findBreakPoints(data_daily, pollutant = "iso")
+  bps <- data.frame(lower="blank",bpt="blank",upper="blank",site = site)
+  bps <- rbind(bps,findBreakPoints(data_daily, pollutant = "iso"))
   bps$site <- site
   
   quant <- quantBreakPoints(data_daily,"iso",breaks = bps)
